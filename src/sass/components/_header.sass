@@ -1,0 +1,249 @@
+.header
+	&__inner
+		display: flex
+		justify-content: space-between
+		position: relative
+		+r(1260)
+			flex-direction: column
+			align-items: center
+	&__bottom-inner
+		position: relative
+	&__top
+		border-bottom: 1px solid $lightGray
+		padding: 30px 0 15px
+		+sm
+			padding: 15px 0 
+	&__right
+		display: flex
+		align-items: center
+	&__categories
+		margin-left: 35px
+		+sm
+			margin-left: 10px
+	&__user
+		float: right
+		display: flex
+		align-items: center
+		padding: 20px 0
+		+r(1260)
+			float: none
+		+sm
+			display: block
+			text-align: center
+	&__search
+		width: 330px
+		margin-left: 25px
+		+sm
+			width: 30px
+			margin-left: 10px
+	&__burger
+		position: absolute
+		right: 20px
+		top: -55px
+	
+.logo
+	display: flex
+	align-items: center
+	text-decoration: none
+	&__img
+		max-width: 73px
+		flex: none
+		+sm
+			max-width: 50px
+		img
+			display: block
+			max-width: 100%
+	&__title,
+	&__title-dark
+		padding: 15px 0 20px
+		font-size: 30px
+		font-weight: 600
+		+sm
+			font-size: 20px
+			padding: 20px 0 
+	&__title
+		color: $darkGray
+	&__title-dark
+		color: $green
+
+.categories
+	font-size: 16px
+	text-transform: uppercase
+	+sm
+		font-size: 12px
+	&__icon, &__title
+		display: inline-block
+		vertical-align: middle
+	&__icon
+		.icon-question
+			display: inline-block
+			vertical-align: middle
+			font-size: 18px
+			fill: $darkGray
+
+.search
+	position: relative
+	&__input
+		width: 100%
+		border: 1px solid $lightGray
+		padding: 12px
+		font-size: 16px
+		+sm
+			display: none
+	&__icon
+		position: absolute
+		right: 12px
+		top: 50%
+		transform: translateY(-50%)
+		.icon-search
+			font-size: 18px
+			display: inline-block
+			vertical-align: middle
+			fill: $darkGray
+
+.user
+	&__icon-block
+		position: relative
+		display: inline-block
+		text-decoration: none
+		&:not(:first-child)
+			margin-left: 35px
+	&__icon
+		.icon-basket, .icon-heart
+			transition: fill 0.5s
+			fill: $darkGray
+			&:hover
+				fill: $green
+	&__notification
+		position: absolute
+		line-height: 20px
+		text-align: center
+		top: -20px
+		right: -20px
+		font-size: 10px
+		background-color: $lightgreen
+		width: 20px
+		height: 20px
+		border-radius: 50%
+		color: $green
+	&__notification-bottom
+		position: absolute
+		color: $green
+		right: -13px
+		top: 0
+		font-size: 10px
+	&__button-exit
+		padding-left: 40px
+		+sm
+			padding-left: 0
+			margin-bottom: 20px
+			margin-top: 20px
+	&__login
+		padding-left: 25px
+		font-size: 16px
+		text-transform: uppercase
+		+sm
+			padding-left: 0
+			margin-bottom: 20px
+	&__login-in
+		position: relative
+		padding-right: 9px
+		text-decoration: none
+		color: $darkGray
+		transition: color 0.5s
+		&:before
+			content: ''
+			position: absolute
+			right: -1px
+			height: 10px
+			width: 1px
+			background-color: #fafafa
+		&:hover
+			color: $green
+	&__login-up
+		color: $darkGray
+		transition: color 0.5s
+		padding-left: 9px
+		text-decoration: none
+		&:hover
+			color: $green
+
+.button-exit
+	color: $lightgreen
+	text-transform: uppercase
+	padding: 10px 12px
+	background-color: $green
+	border-radius: 4px
+	position: relative
+	transition: background-color 0.5s	
+	&:hover
+		background-color: darken($green, 10%)
+
+.menu
+	font-size: 0
+	+md
+		background: gray
+		z-index: 10
+		top: -55px
+		position: absolute
+		opacity: 0
+		visibility: hidden
+		transform: translateX(-100%)
+		transition: opacity 0.5s, transform 0.5s
+		left: -20px
+		padding: 20px 
+		&.is-open
+			opacity: 1
+			visibility: visible
+			transform: translateX(0)
+	&__item
+		display: inline-block
+		padding: 35px 40px 35px 0
+		+md
+			display: block
+			padding: 10px		
+	&__link
+		text-decoration: none
+		text-transform: uppercase
+		font-size: 16px
+		transition: color 0.5s
+		color: $darkGray
+		&.is-active, &:hover
+			color: $green
+		+md
+			color: $white
+
+.burger
+	width: 20px
+	height: 20px
+	display: none
+	+md
+		display: block
+	&__line-top
+		position: absolute
+		width: 20px
+		height: 1px
+		background-color: gray
+		transform: translateY(0)
+		transform-origin: top left
+		transition: transform 0.5s
+		.is-open &
+			transform: translateY(-5px) rotate(45deg)
+	&__line-center
+		position: absolute
+		width: 20px
+		height: 1px
+		background-color: gray
+		transform: translateY(5px)
+		.is-open &
+			opacity: 0 
+	&__line-bottom
+		position: absolute
+		width: 20px
+		height: 1px
+		background-color: gray
+		transform: translateY(10px)
+		transform-origin: top left
+		transition: transform 0.5s
+		.is-open &
+			transform: translateY(9px) rotate(-45deg)
